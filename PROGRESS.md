@@ -3,9 +3,10 @@
 Last updated: 2026-10-04. Read this first when you come back. Vocabulary is in `CONTEXT.md`, copy and design rules in `CLAUDE.md`.
 
 ## Where we left off
-- Site is **deployed on Vercel** (from GitHub `vincentsotoya/va-portfolio`, branch `main`, pushed through commit `f957b67`).
+- Site is **deployed on Vercel** (from GitHub `vincentsotoya/va-portfolio`, branch `main`, pushed through commit `503cbb2`).
 - You tested it on your phone but **haven't reported the result yet**. First thing tomorrow: tell Claude what you saw (checklist below).
-- Local `main` matches GitHub. This file is new and not committed yet.
+- Local `main` matches GitHub, except for this note about the TypeScript pin (edited after the last push).
+- TypeScript is pinned to 6.x because `@astrojs/check` didn't work with 7 (the commit message says so); don't bump it back without checking.
 
 ## Phone test checklist (pending)
 1. Does the "LOADING" pill reach 100% on mobile data and then clear, or get stuck?
@@ -85,6 +86,8 @@ CLAUDE.md                  Copy and design rules for this project
 - Dev server: `npm run dev` (http://localhost:4321/). Phone on same Wi-Fi: `npx astro dev --host`.
 
 ## Commit history (newest first)
+- `503cbb2` Add PROGRESS.md with status, architecture and to-do list
+- `f0f9397` Pin TypeScript to 6 for @astrojs/check (made outside Claude's session, likely to fix the Vercel build; `package.json` now has `typescript ^6.0.3`, lockfile regenerated)
 - `f957b67` Use the wide 2:1 hero artwork
 - `a667127` Fix duplicated hero CSS from the zoom-out change
 - `d986d1f` Zoom the hero artwork out with a blurred backdrop
