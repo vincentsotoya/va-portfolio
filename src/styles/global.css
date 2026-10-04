@@ -350,10 +350,10 @@ video {
   container-type: size;
   /* How much of the artwork's "fill the screen" size to show. 1 = full bleed
      (crops the top and bottom on wide screens); lower zooms out. */
-  --hero-zoom: 0.8;
+  --hero-zoom: 1;
 }
 
-/* The artwork is a 7:5 stage, sized like background-size: cover times --hero-zoom.
+/* The artwork is a 2:1 stage, sized like background-size: cover times --hero-zoom.
    The poster (instant first paint, and fallback if the scrub fails) and the
    scrub canvas share this exact box, so the swap doesn't jump. */
 .hero::before,
@@ -362,8 +362,8 @@ video {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: calc(max(100cqw, 140cqh) * var(--hero-zoom));
-  aspect-ratio: 7 / 5;
+  width: calc(max(100cqw, 200cqh) * var(--hero-zoom));
+  aspect-ratio: 2 / 1;
   transform: translate(-50%, -50%);
 }
 
@@ -371,7 +371,7 @@ video {
 .hero::before {
   content: "";
   z-index: 0;
-  width: max(100cqw, 140cqh);
+  width: max(100cqw, 200cqh);
   background: url("/assets/hero-poster.png") center / cover no-repeat;
   filter: blur(36px) saturate(1.1);
   transform: translate(-50%, -50%) scale(1.15);
@@ -381,13 +381,6 @@ video {
   content: "";
   z-index: 0;
   background: url("/assets/hero-poster.png") center / 100% 100% no-repeat;
-}
-
-.hero::after,
-.hero__canvas {
-  /* Feather the edges into the blurred backdrop */
-  -webkit-mask-image: radial-gradient(ellipse 72% 72% at 50% 50%, #000 62%, transparent 100%);
-  mask-image: radial-gradient(ellipse 72% 72% at 50% 50%, #000 62%, transparent 100%);
 }
 
 .hero__canvas {
@@ -1005,6 +998,25 @@ video {
 }
 
 @media (max-width: 639px) {
+  .hero {
+    /* Portrait screens: show more of the wide artwork, blurred backdrop fills the rest */
+    --hero-zoom: 0.45;
+  }
+
+  /* Pin the artwork under the nav so the text block sits below the computer */
+  .hero::after,
+  .hero__canvas {
+    top: 12%;
+    transform: translate(-50%, 0);
+  }
+
+  /* Feather the artwork's top and bottom into the blurred backdrop */
+  .hero::after,
+  .hero__canvas {
+    -webkit-mask-image: linear-gradient(to bottom, transparent, #000 18%, #000 82%, transparent);
+    mask-image: linear-gradient(to bottom, transparent, #000 18%, #000 82%, transparent);
+  }
+
   .hero__content {
     bottom: 80px;
   }
