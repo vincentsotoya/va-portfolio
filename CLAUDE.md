@@ -12,7 +12,7 @@ Read `CONTEXT.md` first. Use its terms exactly (Service, Sample, Clip, Availabil
 
 ## Design rules
 - Use the existing tokens and classes in `src/styles/global.css`; don't add new colors or fonts without asking.
-- The hero video and cursor-trail stickers are the clone's placeholders. Do not ship them. No AI-generated imagery: only the Owner's own photos and illustrations.
+- The hero video and poster (`public/assets/hero-*`) are the Owner's own. The old clone stickers are gone (the unused `CursorTrail` component still points at them); do not reintroduce clone assets. No AI-generated imagery: only the Owner's own photos and illustrations.
 - Check changes at desktop and phone width before calling them done.
 
 ## Facts live in one place

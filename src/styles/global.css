@@ -346,7 +346,8 @@ video {
   height: 100svh;
   min-height: 620px;
   overflow: hidden;
-  background: var(--black);
+  /* Poster shows instantly, while the video loads, and as the reduced-motion fallback */
+  background: var(--black) url("/assets/hero-poster.png") center / cover no-repeat;
 }
 
 .hero__canvas {
@@ -362,8 +363,8 @@ video {
   inset: 0;
   pointer-events: none;
   background:
-    linear-gradient(to right, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0) 55%),
-    linear-gradient(to top, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0) 40%);
+    linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0) 45%),
+    linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0) 55%);
 }
 
 .hero__content {
@@ -386,8 +387,8 @@ video {
 
 .hero__title {
   margin: 0;
-  /* Also capped by viewport height so short windows keep room around it */
-  font-size: clamp(4.5rem, min(13vw, 24svh), 11.5rem);
+  /* Small: the illustration is the main visual, the title sits in the corner */
+  font-size: clamp(2.75rem, min(6vw, 11svh), 5rem);
   font-weight: 700;
   line-height: 0.86;
   letter-spacing: -0.01em;

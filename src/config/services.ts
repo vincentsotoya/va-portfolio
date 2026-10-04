@@ -40,8 +40,8 @@ export const services: Service[] = [
   {
     num: "04",
     title: "Workflow Automation",
-    summary: "Small scripts and automations that remove repetitive admin.",
-    tools: ["JavaScript", "Node.js", "Slack"],
+    summary: "Small scripts and no-code automations that remove repetitive admin.",
+    tools: ["JavaScript", "Node.js", "Zapier", "Slack"],
     sample: "Sample: automation that files and notifies on incoming requests",
     art: "automation",
   },

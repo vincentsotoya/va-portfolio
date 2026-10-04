@@ -1,11 +1,15 @@
 ---
 import Base from "../layouts/Base.astro";
+import HeroScrub from "../components/HeroScrub";
 import Marquee from "../components/Marquee";
 import ServicesScroll from "../components/ServicesScroll";
 import Clock from "../components/Clock";
 import { site, availabilityLabel, introCallHref, introCallExternal } from "../config/site";
 
-const tags = ["Java", "Gmail", "Google Calendar", "Google Sheets", "Google Drive", "Calendly", "Slack", "JavaScript", "Node.js"];
+const tags = [
+  "Google Workspace", "Gmail", "Google Calendar", "Google Sheets", "Google Drive", "Calendly", "Slack",
+  "Notion", "Trello", "Zapier", "GoHighLevel", "Java", "JavaScript", "Node.js", "HTML & CSS", "React", "GitHub",
+];
 const howIWork = [
   site.responseTime && `Replies within ${site.responseTime}`,
   "NDA on request",
@@ -16,6 +20,8 @@ const howIWork = [
 
 <Base>
   <section class="hero" data-nav="dark">
+    <HeroScrub client:load />
+    <div class="hero__shade"></div>
 
     <div class="hero__content container">
       <div class="hero__main">

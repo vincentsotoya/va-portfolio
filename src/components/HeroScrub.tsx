@@ -1,8 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
-// PLACEHOLDER: this video belongs to the clone, not to the Owner.
-// Replace it (or the whole hero) before any public launch.
-const VIDEO_SRC = "/assets/Video-Scrub.mp4";
+// The Owner's own hero video; the poster (hero-poster.png) is the static fallback.
+const VIDEO_SRC = "/assets/hero-scrub.mp4";
 
 const FRAME_COUNT = 96; // number of still frames kept in memory
 const MAX_FRAME_SIDE = 1280; // longest side of a stored frame, in px
@@ -28,6 +27,12 @@ export default function HeroScrub() {
     const hero = canvas?.closest<HTMLElement>(".hero");
     const ctx = canvas?.getContext("2d");
     if (!canvas || !hero || !ctx) return;
+
+    // Reduced motion: keep the static poster (the hero background) and skip the scrub.
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setDone(true);
+      return;
+    }
 
     let disposed = false;
     const frames: (ImageBitmap | null)[] = new Array(FRAME_COUNT).fill(null);
