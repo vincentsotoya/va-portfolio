@@ -1,0 +1,17 @@
+---
+import { introCallHref, introCallExternal } from "../config/site";
+---
+
+<nav class="nav glass" aria-label="Main">
+  <a class="nav__logo" href="/"><b>VINCENT</b> <span>SOTOYA</span></a>
+  <ul class="nav__links">
+    <li><a href="/#about">About</a></li>
+    <li><a href="/#work">Work</a></li>
+  </ul>
+  <a
+    class="btn btn--light btn--sm"
+    href={introCallHref}
+    target={introCallExternal ? "_blank" : undefined}
+    rel={introCallExternal ? "noopener noreferrer" : undefined}>Intro Call</a
+  >
+</nav>

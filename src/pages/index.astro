@@ -1,0 +1,96 @@
+---
+import Base from "../layouts/Base.astro";
+import Marquee from "../components/Marquee";
+import ServicesScroll from "../components/ServicesScroll";
+import Clock from "../components/Clock";
+import { site, availabilityLabel, introCallHref, introCallExternal } from "../config/site";
+
+const tags = ["Gmail", "Google Calendar", "Google Sheets", "Google Drive", "Calendly", "Slack", "JavaScript", "Node.js"];
+const howIWork = [
+  site.responseTime && `Replies within ${site.responseTime}`,
+  "NDA available",
+  "Rates on request",
+  "Gmail · Calendar · Sheets · Drive · Slack",
+].filter(Boolean) as string[];
+---
+
+<Base>
+  <section class="hero" data-nav="dark">
+
+    <div class="hero__content container">
+      <div class="hero__main">
+        {site.japanNote && <p class="eyebrow">{site.japanNote}</p>}
+        <h1 class="hero__title">Technical<br /><span class="outline">VA</span></h1>
+        <p class="hero__intro">
+          Email, calendar, documents and workflow automation, backed by 3+ years as a software engineer.
+        </p>
+        <div class="hero__actions">
+          <a
+            class="btn btn--light btn--lg"
+            href={introCallHref}
+            target={introCallExternal ? "_blank" : undefined}
+            rel={introCallExternal ? "noopener noreferrer" : undefined}
+          >
+            Book an Intro Call <span class="btn__arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="btn glass btn--lg" href="#work">See services</a>
+        </div>
+      </div>
+
+      <div class="hero__stats">
+        <div class="stat glass">
+          <span class="stat__value">3+</span>
+          <span class="stat__label">Years in software</span>
+        </div>
+        <div class="stat glass">
+          <span class="stat__value stat__value--sm">{availabilityLabel.toUpperCase()}</span>
+          <Clock client:load />
+        </div>
+      </div>
+    </div>
+
+    <div class="hero__scroll glass" aria-hidden="true"><span class="hero__scroll-dot"></span></div>
+  </section>
+
+  <section class="about" id="about">
+    <Marquee client:visible />
+    <div class="about__body container">
+      <p class="eyebrow">(01) About</p>
+      <p class="about__text">
+        I'm Vincent, a <strong>technical virtual assistant</strong> with a software engineering background. I handle
+        email, calendars, documents and spreadsheets, and <strong>write small scripts to automate</strong> the
+        repetitive admin.
+      </p>
+      <ul class="about__tags">
+        {tags.map((t) => <li class="tag glass">{t}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <ServicesScroll client:load />
+
+  <section class="creds" id="credentials">
+    <div class="container">
+      <p class="eyebrow">(03) Credentials</p>
+      <div class="creds__grid">
+        <div class="stat glass">
+          <span class="stat__value">3+</span>
+          <span class="stat__label">Years in software engineering</span>
+        </div>
+        <div class="stat glass">
+          <span class="stat__value stat__value--sm">TRAINED IN JAPAN</span>
+          <span class="stat__label">Quick to pick up new tools</span>
+        </div>
+        <div class="stat glass">
+          <span class="stat__value stat__value--sm">BASIC JAPANESE</span>
+          <span class="stat__label">Basics only, not fluent</span>
+        </div>
+      </div>
+
+      <p class="eyebrow">How I work</p>
+      <ul class="creds__how">
+        {howIWork.map((t) => <li class="tag glass">{t}</li>)}
+      </ul>
+    </div>
+  </section>
+</Base>

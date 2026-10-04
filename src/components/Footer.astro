@@ -1,0 +1,54 @@
+---
+import { site, introCallHref, introCallExternal } from "../config/site";
+---
+
+<footer class="footer" id="contact" data-nav="light">
+  <div class="container">
+    <p class="eyebrow">(04) Contact</p>
+    <h2 class="footer__title">Let's take<br />work off <span class="outline">your plate</span></h2>
+    <div class="footer__actions">
+      <a
+        class="btn btn--dark btn--lg"
+        href={introCallHref}
+        target={introCallExternal ? "_blank" : undefined}
+        rel={introCallExternal ? "noopener noreferrer" : undefined}
+      >
+        Book an Intro Call <span class="btn__arrow" aria-hidden="true">→</span>
+      </a>
+      <a class="footer__email" href={`mailto:${site.email}`}>{site.email}</a>
+    </div>
+    <p class="footer__note">15-minute intro call · rates on request</p>
+
+    <div class="footer__grid">
+      <div>
+        <h3 class="footer__heading">Base</h3>
+        <p>Based in the Philippines<br />Working remotely, worldwide</p>
+      </div>
+      <div>
+        <h3 class="footer__heading">Elsewhere</h3>
+        <ul class="footer__list">
+          <li><a href={site.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href={site.github} target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          <li><a href={`mailto:${site.email}`}>Email</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer__heading">Menu</h3>
+        <ul class="footer__list">
+          <li><a href="/#about">About</a></li>
+          <li><a href="/#work">Work</a></li>
+        </ul>
+      </div>
+      <div class="footer__top-wrap">
+        <a class="footer__top glass" href="#top" aria-label="Back to top">↑</a>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <span>© 2026 {site.name}</span>
+      <span>Technical virtual assistant</span>
+    </div>
+  </div>
+
+  <div class="footer__wordmark" aria-hidden="true">SOTOYA</div>
+</footer>
