@@ -41,7 +41,7 @@ export default function HeroScrub() {
 
     const resizeCanvas = () => {
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
-      const rect = hero.getBoundingClientRect();
+      const rect = canvas.getBoundingClientRect();
       canvas.width = Math.round(rect.width * dpr);
       canvas.height = Math.round(rect.height * dpr);
       dirty = true;
