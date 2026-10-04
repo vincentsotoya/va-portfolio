@@ -5,7 +5,7 @@ import ServicesScroll from "../components/ServicesScroll";
 import Clock from "../components/Clock";
 import { site, availabilityLabel, introCallHref, introCallExternal } from "../config/site";
 
-const tags = ["Gmail", "Google Calendar", "Google Sheets", "Google Drive", "Calendly", "Slack", "JavaScript", "Node.js"];
+const tags = ["Java", "Gmail", "Google Calendar", "Google Sheets", "Google Drive", "Calendly", "Slack", "JavaScript", "Node.js"];
 const howIWork = [
   site.responseTime && `Replies within ${site.responseTime}`,
   "NDA on request",
@@ -19,7 +19,7 @@ const howIWork = [
 
     <div class="hero__content container">
       <div class="hero__main">
-        {site.japanNote && <p class="eyebrow">{site.japanNote}</p>}
+        {site.availability === "available" && <p class="eyebrow">Currently available for hire</p>}
         <h1 class="hero__title">Technical<br /><span class="outline">VA</span></h1>
         <p class="hero__intro">
           Email, calendar, documents and workflow automation, backed by 3+ years as a software engineer.
@@ -79,7 +79,7 @@ const howIWork = [
         </div>
         <div class="stat glass">
           <span class="stat__value stat__value--sm">TRAINED IN JAPAN</span>
-          <span class="stat__label">Quick to pick up new tools</span>
+          <span class="stat__label">Trained on Java, quick to pick up new tools</span>
         </div>
         <div class="stat glass">
           <span class="stat__value stat__value--sm">BASIC JAPANESE</span>

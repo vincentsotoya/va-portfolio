@@ -25,7 +25,7 @@ A short silent motion graphic, made in Remotion, that shows what a Service does.
 The Owner's current hiring status shown to Visitors (Available, Limited or Booked), set by hand.
 
 **Base**:
-Where the Owner works from. The Philippines, with a note while the Owner is still working in Japan.
+Where the Owner works from: the Philippines.
 
 **Intro Call**:
 A 15-minute call a Visitor books through the calendar link to discuss working together.
@@ -36,7 +36,7 @@ A blog entry about the Owner's life in Japan. Photos of the Owner only; no emplo
 _Avoid_: Article
 
 **Credentials**:
-The résumé-derived proof of reliability shown to Visitors (years in software engineering, trained as an engineer in Japan, basic Japanese only). Never names the Owner's employers' clients or projects.
+The résumé-derived proof of reliability shown to Visitors (years in software engineering, trained as a Java engineer in Japan, basic Japanese only). Never names the Owner's employers' clients or projects.
 _Avoid_: Testimonials (there are none yet)
 
 ## Relationships

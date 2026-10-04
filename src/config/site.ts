@@ -19,8 +19,6 @@ export const site = {
   location: "Philippines",
   // Set by hand: "available" | "limited" | "booked".
   availability: "available" as "available" | "limited" | "booked",
-  // Shown in the hero while the Owner is still in Japan. Set to "" once back home.
-  japanNote: "Currently working in Japan until November 2026",
   // Shown in the "How I work" strip; empty values are not shown.
   responseTime: "one business day",
 } as const;
