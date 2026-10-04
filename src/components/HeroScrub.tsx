@@ -28,12 +28,6 @@ export default function HeroScrub() {
     const ctx = canvas?.getContext("2d");
     if (!canvas || !hero || !ctx) return;
 
-    // Reduced motion: keep the static poster (the hero background) and skip the scrub.
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      setDone(true);
-      return;
-    }
-
     let disposed = false;
     const frames: (ImageBitmap | null)[] = new Array(FRAME_COUNT).fill(null);
     let target = 0;

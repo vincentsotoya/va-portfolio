@@ -346,7 +346,7 @@ video {
   height: 100svh;
   min-height: 620px;
   overflow: hidden;
-  /* Poster shows instantly, while the video loads, and as the reduced-motion fallback */
+  /* Poster shows instantly, while the video loads, and if the scrub fails */
   background: var(--black) url("/assets/hero-poster.png") center / cover no-repeat;
 }
 
